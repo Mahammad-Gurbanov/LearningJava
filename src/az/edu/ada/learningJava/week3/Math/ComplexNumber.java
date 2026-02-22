@@ -33,4 +33,8 @@ public class ComplexNumber {
         return res;
     }
 
+    public ComplexNumber conjugate(){
+        return new ComplexNumber(this.real, Math.abs(this.imag));
+    }
+
 }

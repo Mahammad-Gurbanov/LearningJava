@@ -7,6 +7,7 @@ public class Main {
         ComplexNumber num1 = new ComplexNumber(3.2164, -4.329);
         System.out.println(num1.getReal());
         System.out.println(num1.getImag());
+        System.out.println(num1.conjugate());
 
     }
 }

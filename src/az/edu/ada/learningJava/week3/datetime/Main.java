@@ -1,15 +1,14 @@
 package az.edu.ada.learningJava.week3.datetime;
 
+import az.edu.ada.learningJava.week3.Math.ComplexNumber;
+
 public class Main {
     public static void main(String[] args) {
-        CustomTime time1 = new CustomTime();
-        CustomTime time2 = new CustomTime(11, 3, 4);
-        CustomTime time3 = new CustomTime(17);
-        CustomTime time4 = new CustomTime(18, 30);
-        CustomTime time5 = new CustomTime(time4);
-        CustomTime[] times = {time1, time2, time3, time4, time5};
-        for (CustomTime time : times){
-            System.out.println(time.toStandardString());
-        }
+        ComplexNumber num1 = new ComplexNumber(3, 4);
+        ComplexNumber num2 = new ComplexNumber(8, 10);
+        ComplexNumber num3 = new ComplexNumber(3, 4);
+
+        System.out.println(num1.equals(num2));
+        System.out.println(num1.equals(num3));
     }
 }

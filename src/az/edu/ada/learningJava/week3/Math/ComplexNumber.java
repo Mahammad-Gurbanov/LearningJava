@@ -17,4 +17,9 @@ public class ComplexNumber {
         return this.imag;
     }
 
+    public boolean equals(ComplexNumber otherComplexNum){
+        return this.real == otherComplexNum.getReal() &&
+                this.imag == otherComplexNum.getImag();
+    }
+
 }

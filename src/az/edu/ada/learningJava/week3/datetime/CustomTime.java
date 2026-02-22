@@ -73,4 +73,25 @@ public class CustomTime {
         return universalString;
     }
 
+    public String toStandardString(){
+        String standardString;
+        String period;
+        int hour;
+        if (this.hour < 12) {
+            period = "AM";
+            hour = this.hour;
+        }
+        else if (this.hour == 12){
+            period = "PM";
+            hour = this.hour;
+        }
+        else {
+            period = "PM";
+            hour = this.hour - 12;
+        }
+        standardString = String.format("%d:%02d:%02d %s",
+                hour, this.minute, this.second, period);
+        return standardString;
+    }
+
 }

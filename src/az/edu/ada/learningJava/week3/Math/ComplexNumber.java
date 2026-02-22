@@ -54,4 +54,12 @@ public class ComplexNumber {
         return new ComplexNumber(real, imag);
     }
 
+    public ComplexNumber mul(ComplexNumber otherNum){
+        double real = this.real * otherNum.getReal() -
+                this.imag * otherNum.getImag();
+        double imag = this.real * otherNum.getImag() +
+                this.imag * otherNum.getReal();
+        return new ComplexNumber(real, imag);
+    }
+
 }

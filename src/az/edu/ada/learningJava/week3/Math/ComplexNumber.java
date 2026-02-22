@@ -48,4 +48,10 @@ public class ComplexNumber {
         return new ComplexNumber(real, imag);
     }
 
+    public ComplexNumber sub(ComplexNumber otherNum){
+        double real = this.real - otherNum.getReal();
+        double imag = this.imag - otherNum.getImag();
+        return new ComplexNumber(real, imag);
+    }
+
 }

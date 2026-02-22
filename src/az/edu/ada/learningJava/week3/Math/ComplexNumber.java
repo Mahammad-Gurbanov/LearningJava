@@ -42,4 +42,10 @@ public class ComplexNumber {
         return new ComplexNumber(real, 0);
     }
 
+    public ComplexNumber add(ComplexNumber otherNum){
+        double real = this.real + otherNum.getReal();
+        double imag = this.imag + otherNum.getImag();
+        return new ComplexNumber(real, imag);
+    }
+
 }

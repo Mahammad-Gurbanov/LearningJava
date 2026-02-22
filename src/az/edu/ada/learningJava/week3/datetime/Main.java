@@ -2,11 +2,15 @@ package az.edu.ada.learningJava.week3.datetime;
 
 public class Main {
     public static void main(String[] args) {
-        // Test dislayDate method
-        CustomDate date1 = new CustomDate(22, 3, 2025);
-        CustomDate date2 = new CustomDate(22, 9, 2015);
-        System.out.println(CustomDate.compare(date1, date2));
-        date1.displayFormatted();
-        date2.displayFormatted();
+        CustomTime time1 = new CustomTime();
+        CustomTime time2 = new CustomTime(12, 3, 4);
+        CustomTime time3 = new CustomTime(17);
+        CustomTime time4 = new CustomTime(18, 30);
+        CustomTime time5 = new CustomTime(time4);
+        CustomTime[] times = {time1, time2, time3, time4, time5};
+        for (CustomTime time : times){
+            System.out.printf("%d %d %d\n", time.getHour(), time.getMinute(),
+                    time.getSecond());
+        }
     }
 }

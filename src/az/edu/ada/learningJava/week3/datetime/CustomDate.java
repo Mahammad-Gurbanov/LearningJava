@@ -79,4 +79,21 @@ public class CustomDate {
     public void displayDate(){
         System.out.printf("%d/%d/%d", this.day, this.month, this.year);
     }
+
+    /**
+     * Find the approximate difference in days, between 2 CustomDate
+     * objects.
+     * Note that in both cases the number of days is calculated
+     * approximately, with the formulae day + month * 30 + year * 365
+     * @param otherDate other CustomDate object.
+     * @return int value representing the difference in days, value can be
+     * negative, zero or positive.
+     */
+    public int difference(CustomDate otherDate){
+
+        int thisDateInDays = this.day + this.month * 30 + this.year * 365;
+        int otherDateInDays = otherDate.getDay() + otherDate.getMonth() * 30 +
+                otherDate.getYear() * 365;
+        return thisDateInDays - otherDateInDays;
+    }
 }

@@ -67,4 +67,10 @@ public class CustomTime {
         return this.second;
     }
 
+    public String toUniversalString(){
+        String universalString = String.format("%02d:%02d:%02d",
+                this.hour, this.minute, this.second);
+        return universalString;
+    }
+
 }

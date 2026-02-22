@@ -75,4 +75,8 @@ public class CustomDate {
         validateDate(newDay, this.month, this.year);
         this.day = newDay;
     }
+
+    public void displayDate(){
+        System.out.printf("%d/%d/%d", this.day, this.month, this.year);
+    }
 }

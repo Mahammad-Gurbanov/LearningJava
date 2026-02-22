@@ -37,4 +37,9 @@ public class ComplexNumber {
         return new ComplexNumber(this.real, Math.abs(this.imag));
     }
 
+    public ComplexNumber abs(){
+        double real = Math.sqrt(this.real * this.real + this.imag * this.imag);
+        return new ComplexNumber(real, 0);
+    }
+
 }

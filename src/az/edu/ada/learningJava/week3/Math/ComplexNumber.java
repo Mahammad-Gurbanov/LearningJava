@@ -5,8 +5,8 @@ public class ComplexNumber {
     private double imag;
 
     public ComplexNumber(double real, double imag){
-        this.real = real;
-        this.imag = imag;
+        this.real = Math.round(real * 100) / 100.0;
+        this.imag = Math.round(imag * 100) / 100.0;
     }
 
     public double getReal(){

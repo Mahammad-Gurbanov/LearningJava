@@ -17,5 +17,19 @@ public class CLIArgs {
             numbers.add(num);
         }
         System.out.println(numbers);
+
+        int[] numbsIntArray = new int[numbers.size()];
+        for (int i = 0; i < numbers.size(); i++){
+            numbsIntArray[i] = numbers.get(i);
+        }
+        System.out.println(calcSum(numbsIntArray));
+    }
+
+    public static int calcSum(int... nums){
+        int sum = 0;
+        for (int num : nums){
+            sum += num;
+        }
+        return sum;
     }
 }

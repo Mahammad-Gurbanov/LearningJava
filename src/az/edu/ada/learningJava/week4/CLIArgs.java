@@ -23,6 +23,8 @@ public class CLIArgs {
             numbsIntArray[i] = numbers.get(i);
         }
         System.out.println(calcSum(numbsIntArray));
+        System.out.println("Min number: " + findMin(numbsIntArray));
+        System.out.println("Max number: " + findMax(numbsIntArray));
     }
 
     public static int calcSum(int... nums){
@@ -31,5 +33,23 @@ public class CLIArgs {
             sum += num;
         }
         return sum;
+    }
+
+    public static int findMin(int... nums){
+        int min = nums[0];
+        for (int num : nums){
+            if (num < min){
+                min = num;
+            }
+        }
+        return min;
+    }
+
+    public static int findMax(int... nums){
+        int max = nums[0];
+        for (int num : nums){
+            if (num > max) max = num;
+        }
+        return max;
     }
 }

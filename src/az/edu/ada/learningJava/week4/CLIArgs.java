@@ -1,30 +1,14 @@
 package az.edu.ada.learningJava.week4;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class CLIArgs {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("User input: ");
-        String user_inp = scanner.nextLine();
-        System.out.println(user_inp);
-
-        System.out.println("Enter integers: ");
-        ArrayList<Integer> numbers = new ArrayList<>();
-        while (scanner.hasNextInt()){
-            int num = scanner.nextInt();
-            numbers.add(num);
-        }
-        System.out.println(numbers);
-
-        int[] numbsIntArray = new int[numbers.size()];
-        for (int i = 0; i < numbers.size(); i++){
-            numbsIntArray[i] = numbers.get(i);
-        }
-        System.out.println(calcSum(numbsIntArray));
-        System.out.println("Min number: " + findMin(numbsIntArray));
-        System.out.println("Max number: " + findMax(numbsIntArray));
+        int[] arr = {1, 3, 5, 5, 2, 4, 3, 4};
+        // 1 2 3 3 4 4 5 5
+        System.out.println(findMedian(arr));
     }
 
     public static int calcSum(int... nums){
@@ -51,5 +35,14 @@ public class CLIArgs {
             if (num > max) max = num;
         }
         return max;
+    }
+
+    public static double findMedian(int... nums){
+        Arrays.sort(nums);
+        if (nums.length % 2 == 1){
+            return nums[nums.length / 2];
+        } else {
+            return (nums[nums.length / 2] + nums[nums.length / 2 - 1]) / 2.0;
+        }
     }
 }

@@ -6,9 +6,8 @@ import java.util.Scanner;
 
 public class CLIArgs {
     public static void main(String[] args) {
-        int[] arr = {1, 3, 5, 5, 2, 4, 3, 4};
-        // 1 2 3 3 4 4 5 5
-        System.out.println(findMedian(arr));
+        int[] arr = {1, 3, 5, 5, 2, 4, 3, 4, 3, 5, 5};
+        System.out.println(findMode(arr));
     }
 
     public static int calcSum(int... nums){
@@ -44,5 +43,25 @@ public class CLIArgs {
         } else {
             return (nums[nums.length / 2] + nums[nums.length / 2 - 1]) / 2.0;
         }
+    }
+
+    public static int findMode(int... nums){
+        Arrays.sort(nums);
+        int maxCount = 1;
+        int currentCount = 1;
+        int mode = nums[0];
+        for (int i = 1; i < nums.length; i++){
+            if (nums[i] == nums[i - 1]){
+                currentCount++;
+            } else {
+                currentCount = 1;
+            }
+            if (currentCount > maxCount){
+                maxCount = currentCount;
+                mode = nums[i - 1];
+            }
+
+        }
+        return mode;
     }
 }

@@ -13,6 +13,9 @@ public class Strings {
 
         String sentence = "I am learning Java";
         System.out.println(mix(sentence));
+
+        String sub = ".X";
+        System.out.println(indexOf(example, sub));
     }
 
     public static String reverse(String str){
@@ -61,6 +64,18 @@ public class Strings {
             }
         }
         return sentence.toString();
+    }
+
+    public static int indexOf(String str, String sub){
+       for (int i = 0; i < str.length() - sub.length(); i++){
+           int equalLength = 0;
+           for (int j = 0; j < sub.length(); j++){
+               if (str.charAt(i + j) == sub.charAt(j)) equalLength++;
+               else break;
+           }
+           if (equalLength == sub.length()) return i;
+       }
+       return -1;
     }
 
 }

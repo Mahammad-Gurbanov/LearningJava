@@ -16,6 +16,9 @@ public class Strings {
 
         String sub = ".X";
         System.out.println(indexOf(example, sub));
+        System.out.println(example.substring(0, 0));
+
+        displayAllHalves(example);
     }
 
     public static String reverse(String str){
@@ -76,6 +79,14 @@ public class Strings {
            if (equalLength == sub.length()) return i;
        }
        return -1;
+    }
+
+    public static void displayAllHalves(String str){
+        for (int i = 0; i <= str.length(); i++){
+            String leftHalf = str.substring(0, i);
+            String rightHalf = str.substring(i);
+            System.out.println(leftHalf + " " + rightHalf);
+        }
     }
 
 }

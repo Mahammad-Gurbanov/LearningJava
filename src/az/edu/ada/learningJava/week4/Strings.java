@@ -10,6 +10,9 @@ public class Strings {
         System.out.println(sort(example));
         System.out.println(isAnagram(example, "YZX.A.B.C"));
         System.out.println(isAnagram(example, "YWX.A.B.C"));
+
+        String sentence = "I am learning Java";
+        System.out.println(mix(sentence));
     }
 
     public static String reverse(String str){
@@ -38,6 +41,26 @@ public class Strings {
 
     public static boolean isAnagram(String str1, String str2){
         return sort(str1).equals(sort(str2));
+    }
+
+    public static String mix(String str){
+        String[] words = str.split(" ");
+        for (int i = 0; i < words.length; i++){
+            StringBuilder sb = new StringBuilder(words[i]);
+            char firstChar = sb.charAt(0);
+            sb.setCharAt(0, sb.charAt(sb.length() - 1));
+            sb.setCharAt(sb.length() - 1, firstChar);
+            words[i] = new String(sb);
+        }
+        StringBuilder sentence = new StringBuilder();
+        for (int i = 0; i < words.length; i++){
+            if (i == words.length - 1) sentence.append(words[i]);
+            else{
+                sentence.append(words[i]);
+                sentence.append(" ");
+            }
+        }
+        return sentence.toString();
     }
 
 }

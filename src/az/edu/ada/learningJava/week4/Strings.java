@@ -4,6 +4,7 @@ public class Strings {
     public static void main(String[] args) {
         String example = "ABC...XYZ";
         System.out.println(reverse(example));
+        System.out.println(explode(example));
     }
 
     public static String reverse(String str){
@@ -14,9 +15,14 @@ public class Strings {
             reversedString = reversedString + str.charAt(i);
         }
         return reversedString;
+    }
 
-
-
+    public static String explode(String str){
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < str.length(); i++){
+            sb.append(str.substring(0, i + 1));
+        }
+        return sb.toString();
     }
 
 }

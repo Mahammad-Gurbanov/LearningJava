@@ -8,6 +8,8 @@ public class Strings {
         System.out.println(reverse(example));
         System.out.println(explode(example));
         System.out.println(sort(example));
+        System.out.println(isAnagram(example, "YZX.A.B.C"));
+        System.out.println(isAnagram(example, "YWX.A.B.C"));
     }
 
     public static String reverse(String str){
@@ -32,6 +34,10 @@ public class Strings {
         char[] chars = str.toCharArray();
         Arrays.sort(chars);
         return new String(chars);
+    }
+
+    public static boolean isAnagram(String str1, String str2){
+        return sort(str1).equals(sort(str2));
     }
 
 }

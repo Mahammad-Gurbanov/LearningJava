@@ -41,4 +41,10 @@ public class HangmanGame {
         System.out.println("Current State is");
         System.out.println(sb);
     }
+
+    public boolean hasFound(){
+        StringBuilder sb = new StringBuilder();
+        for (char c : this.state) sb.append(c);
+        return this.secretWord.contentEquals(sb);
+    }
 }

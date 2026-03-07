@@ -2,10 +2,13 @@ package az.edu.ada.learningJava.week5;
 
 public class Main {
     public static void main(String[] args) {
-        Customer c1 = new Customer(123, "ABC", 'm');
-        Account a1 = new Account(1, c1, 123.4);
-        a1.deposit(100);
-        a1.withdraw(12);
-        System.out.println(a1.getBalance());
+        Rectangle r1 = new Rectangle(12, 13);
+        Rectangle r2 = new Rectangle(12, 13);
+        Rectangle r3 = new Rectangle(29, 30);
+        System.out.println(r1.equals(r1));
+        System.out.println(r1.equals(r2));
+        System.out.println(r1.equals(r3));
+        System.out.println(r1.equals("12 13"));
+
     }
 }

@@ -15,7 +15,7 @@ public class Rectangle {
     public boolean equals(Object obj){
         if (this == obj) return true;
 
-        if (obj == null || getClass() != obj.getClass()) return false;
+        if (!(obj instanceof Rectangle)) return false;
 
         Rectangle otherRect = (Rectangle) obj;
         return this.width == otherRect.width && this.height == otherRect.height;

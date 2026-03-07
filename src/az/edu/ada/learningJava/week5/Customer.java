@@ -26,4 +26,10 @@ public class Customer {
         return this.gender;
     }
 
+    @Override
+    public String toString(){
+        return String.format("%s(%d), gender: %c", this.name, this.ID,
+                this.gender);
+    }
+
 }

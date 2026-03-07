@@ -54,4 +54,20 @@ public class Account {
                 this.id, this.balance);
     }
 
+    public void deposit(double amount){
+        if (amount <= 0){
+            throw new IllegalArgumentException("Deposit amount must be " +
+                    "positive");
+        }
+        this.balance += amount;
+    }
+
+    public void withdraw(double amount){
+        if (this.balance >= amount) this.balance -= amount;
+        else {
+            throw new IllegalArgumentException("Insufficient balance, can't " +
+                    "withdraw money");
+        }
+    }
+
 }

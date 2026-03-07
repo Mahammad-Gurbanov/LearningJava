@@ -44,4 +44,14 @@ public class Account {
         this.balance = newBalance;
     }
 
+    public String getCustomerName(){
+        return this.customer.getName();
+    }
+
+    @Override
+    public String toString(){
+        return String.format("%s(%d) balance=$%.2f", this.customer.getName(),
+                this.id, this.balance);
+    }
+
 }

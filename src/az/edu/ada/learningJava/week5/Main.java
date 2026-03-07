@@ -2,13 +2,14 @@ package az.edu.ada.learningJava.week5;
 
 public class Main {
     public static void main(String[] args) {
-        Rectangle r1 = new Rectangle(12, 13);
-        Rectangle r2 = new Rectangle(12, 13);
-        Rectangle r3 = new Rectangle(29, 30);
-        System.out.println(r1.equals(r1));
-        System.out.println(r1.equals(r2));
-        System.out.println(r1.equals(r3));
-        System.out.println(r1.equals("12 13"));
+        Object o1 = new Rectangle(5,10);
+        Object o2 = new Rectangle(15,15);
+        Object o3 = new Square(15);
+        System.out.println("Objects are identical: " + o1.equals(o2));
+        System.out.println("Objects are identical: " + o1.equals(o3));
+        System.out.println("Objects are identical: " + o2.equals(o3));
+        System.out.println("Objects are identical: " + o2.equals("15 15"));
+        System.out.println("Objects are identical: " + o3.equals(15));
 
     }
 }

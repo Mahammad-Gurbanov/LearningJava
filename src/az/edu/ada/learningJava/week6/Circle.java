@@ -40,4 +40,10 @@ public class Circle extends Shape{
         perimeter = perimeter.setScale(2, RoundingMode.HALF_UP);
         return perimeter.doubleValue();
     }
+
+    @Override
+    public String toString(){
+        return String.format("Circle[%s, radius: %.2f]", super.toString(),
+                radius);
+    }
 }

@@ -19,5 +19,7 @@ public class Main {
         System.out.println(c2.getArea());
         System.out.println(c2.getPerimeter());
 
+        System.out.println(c2);
+
     }
 }

@@ -3,7 +3,7 @@ package az.edu.ada.learningJava.week6;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class Circle extends Shape{
+public class Circle extends Shape implements Resizable{
     private double radius = 1.0;
 
     public Circle(){}
@@ -39,6 +39,10 @@ public class Circle extends Shape{
         BigDecimal perimeter = pi.multiply(radius.add(radius));
         perimeter = perimeter.setScale(2, RoundingMode.HALF_UP);
         return perimeter.doubleValue();
+    }
+
+    public void resize(double factor){
+        this.radius *= factor;
     }
 
     @Override

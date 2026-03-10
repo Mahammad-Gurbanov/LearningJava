@@ -3,7 +3,7 @@ package az.edu.ada.learningJava.week6;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class Rectangle extends Shape{
+public class Rectangle extends Shape implements Resizable{
     private double width = 1.0;
     private double length = 1.0;
 
@@ -52,6 +52,11 @@ public class Rectangle extends Shape{
         perimeter = perimeter.add(perimeter);
         perimeter = perimeter.setScale(2, RoundingMode.HALF_UP);
         return perimeter.doubleValue();
+    }
+
+    public void resize(double factor){
+        width *= factor;
+        length *= factor;
     }
 
     @Override

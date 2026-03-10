@@ -59,4 +59,13 @@ public class Rectangle extends Shape{
          return String.format("Rectangle[%s, width: %.2f, length: %.2f]",
                 super.toString(), width, length);
     }
+
+    @Override
+    public boolean equals(Object obj){
+        if (!(obj instanceof Rectangle)) return false;
+
+        Rectangle other = (Rectangle) obj;
+        return other.getLength() == length && other.getWidth() == width &&
+                super.equals(other);
+    }
 }

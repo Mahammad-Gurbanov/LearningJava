@@ -46,4 +46,12 @@ public class Circle extends Shape{
         return String.format("Circle[%s, radius: %.2f]", super.toString(),
                 radius);
     }
+
+    @Override
+    public boolean equals(Object obj){
+        if (!(obj instanceof Circle)) return false;
+
+        Circle other = (Circle) obj;
+        return other.getRadius() == radius && super.equals(other);
+    }
 }

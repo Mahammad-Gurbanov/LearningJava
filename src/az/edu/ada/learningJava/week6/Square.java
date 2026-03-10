@@ -24,4 +24,12 @@ public class Square extends Rectangle{
     public String toString(){
         return String.format("Square[%s]", super.toString());
     }
+
+    @Override
+    public boolean equals(Object obj){
+        if (!(obj instanceof Square)) return false;
+
+        return super.equals(obj);
+    }
+
 }

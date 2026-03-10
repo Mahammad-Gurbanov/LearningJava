@@ -35,4 +35,13 @@ public abstract class Shape {
     public String toString(){
         return String.format("Shape[color: %s, filled: %b]", color, filled);
     }
+
+    @Override
+    public boolean equals(Object obj){
+        if (!(obj instanceof Shape)) return false;
+
+        Shape other = (Shape) obj;
+
+        return color.equals(other.getColor()) && filled == other.isFilled();
+    }
 }

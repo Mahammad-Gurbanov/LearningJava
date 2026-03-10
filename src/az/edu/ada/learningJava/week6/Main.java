@@ -2,24 +2,23 @@ package az.edu.ada.learningJava.week6;
 
 public class Main {
     public static void main(String[] args) {
-        Circle c1 = new Circle();
-        System.out.println(c1.getColor());
-        System.out.println(c1.getRadius());
-        System.out.println(c1.isFilled());
+        Rectangle rectangle1 = new Rectangle();
+        System.out.println(rectangle1.getColor());
+        System.out.println(rectangle1.isFilled());
 
-        c1.setColor("Blue");
-        c1.setFilled(false);
-        System.out.println(c1.getRadius());
-        System.out.println(c1.isFilled());
+        rectangle1.setColor("Blue");
+        rectangle1.setFilled(false);
+        System.out.println(rectangle1.getColor());
+        System.out.println(rectangle1.isFilled());
 
-        System.out.println(c1.getArea());
-        System.out.println(c1.getPerimeter());
+        System.out.println(rectangle1.getArea());
+        System.out.println(rectangle1.getPerimeter());
 
-        Circle c2 = new Circle(10, "Green", true);
-        System.out.println(c2.getArea());
-        System.out.println(c2.getPerimeter());
+        Rectangle rectangle2 = new Rectangle(10, 15, "Green", true);
+        System.out.println(rectangle2.getArea());
+        System.out.println(rectangle2.getPerimeter());
 
-        System.out.println(c2);
+        System.out.println(rectangle2);
 
     }
 }

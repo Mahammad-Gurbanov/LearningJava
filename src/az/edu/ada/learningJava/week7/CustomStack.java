@@ -4,6 +4,7 @@ public class CustomStack {
     private int size = 5;
     private int[] stack;
     private int elementCount = 0;
+    private static final int MAXSIZE = 100;
 
     private boolean shouldExpand(){
         return elementCount * 2 >= size;
@@ -14,13 +15,15 @@ public class CustomStack {
     }
 
     private void expandStack(){
+        if (size == MAXSIZE) return;
+
         int[] oldStack = stack;
         size *= 2;
+        if (size > MAXSIZE) size = MAXSIZE;
         stack = new int[size];
-        for (int i = 0; i < oldStack.length; i++){
+        for (int i = 0; i < elementCount; i++){
             stack[i] = oldStack[i];
         }
-
     }
 
     private void shrinkStack(){
@@ -41,5 +44,23 @@ public class CustomStack {
         if (size <= 0) throw new
                 InvalidSizeException("Size must be a positive Integer");
         this.size = size;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public int getElementCount() {
+        return elementCount;
+    }
+
+    public void push(int element){
+        if (size < MAXSIZE) throw new
+                StackOverflowException("Stack can't exceed " + MAXSIZE + " elements.");
+
+        if (shouldExpand()) expandStack();
+
+        stack[elementCount] = element;
+        elementCount++;
     }
 }

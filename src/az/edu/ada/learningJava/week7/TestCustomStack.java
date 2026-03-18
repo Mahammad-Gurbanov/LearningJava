@@ -16,8 +16,11 @@ public class TestCustomStack {
         for (int i = 0; i < 7; i++){
             System.out.println(stack.pop());
         }
+        System.out.print("Element count: ");
         System.out.println(stack.getElementCount());
         System.out.println(stack.getSize());
+
+        System.out.println(stack.peek());
 
 
     }

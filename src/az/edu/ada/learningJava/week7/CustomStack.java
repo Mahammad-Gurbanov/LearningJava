@@ -69,4 +69,14 @@ public class CustomStack {
         stack[elementCount] = element;
         elementCount++;
     }
+
+    public int pop(){
+        if (elementCount == 0)
+            throw new InvalidSizeException("Can't pop from an empty stack");
+
+        if (shouldShrink()) shrinkStack();
+
+        elementCount--;
+        return stack[elementCount];
+    }
 }

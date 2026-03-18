@@ -6,25 +6,18 @@ public class TestCustomStack {
         System.out.println(stack.getElementCount());
         System.out.println(stack.getSize());
 
-        stack.push(10);
-        System.out.println(stack.getElementCount());
-        System.out.println(stack.getSize());
 
         for (int i = 0; i < 10; i++){
             stack.push(i + 1);
         }
 
-        System.out.println(stack.getElementCount());
-        System.out.println(stack.getSize());
+//        System.out.println(stack.pop());
 
-        for (int i = 30; i < 119; i++){
-            stack.push(i);
+        for (int i = 0; i < 7; i++){
+            System.out.println(stack.pop());
         }
-
         System.out.println(stack.getElementCount());
         System.out.println(stack.getSize());
-
-        stack.push(9);
 
 
     }

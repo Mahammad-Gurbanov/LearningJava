@@ -79,4 +79,11 @@ public class CustomStack {
         elementCount--;
         return stack[elementCount];
     }
+
+    public int peek(){
+        if (elementCount == 0)
+            throw new InvalidSizeException("Can't peek an element in an empty" +
+                    " stack");
+        return stack[elementCount - 1];
+    }
 }

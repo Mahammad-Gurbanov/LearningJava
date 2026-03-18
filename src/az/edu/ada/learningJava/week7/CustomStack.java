@@ -60,7 +60,7 @@ public class CustomStack {
     }
 
     public void push(int element){
-        if (size < MAXSIZE) throw new
+        if (elementCount >= MAXSIZE) throw new
                 StackOverflowException("Stack can't exceed " + MAXSIZE +
                 " elements.");
 

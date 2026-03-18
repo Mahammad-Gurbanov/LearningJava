@@ -12,7 +12,7 @@ public class CustomStack {
     }
 
     private boolean shouldShrink(){
-        return elementCount * 4 < size && elementCount > initialSize;
+        return elementCount * 4 < size && size > initialSize;
     }
 
     private void expandStack(){

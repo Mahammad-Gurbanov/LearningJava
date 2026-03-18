@@ -21,8 +21,6 @@ public class TestCustomStack {
         System.out.println(stack.getSize());
 
         System.out.println(stack.peek());
-
-
     }
 
 }

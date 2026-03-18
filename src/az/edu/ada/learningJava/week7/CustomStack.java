@@ -44,8 +44,8 @@ public class CustomStack {
     public CustomStack(int size){
         if (size <= 0) throw new
                 InvalidSizeException("Size must be a positive Integer");
-        if (size > MAXSIZE) throw new
-                InvalidSizeException("Stack can't exceed " + MAXSIZE +
+        if (size > MAXSIZE)
+            throw new InvalidSizeException("Stack can't exceed " + MAXSIZE +
                 " elements");
         this.size = size;
         initialSize = size;
@@ -60,8 +60,8 @@ public class CustomStack {
     }
 
     public void push(int element){
-        if (elementCount >= MAXSIZE) throw new
-                StackOverflowException("Stack can't exceed " + MAXSIZE +
+        if (elementCount >= MAXSIZE)
+            throw new StackOverflowException("Stack can't exceed " + MAXSIZE +
                 " elements.");
 
         if (shouldExpand()) expandStack();

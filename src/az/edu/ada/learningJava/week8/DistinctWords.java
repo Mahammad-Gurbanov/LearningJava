@@ -28,4 +28,8 @@ public class DistinctWords {
             names[i] = res[i];
         }
     }
+
+    public void sortAlphabetically(){
+        Arrays.sort(names);
+    }
 }

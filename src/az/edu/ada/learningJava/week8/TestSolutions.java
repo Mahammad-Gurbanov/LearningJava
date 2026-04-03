@@ -5,6 +5,7 @@ public class TestSolutions {
         String[] exampleNames = {"John", "Fred", "Bruce", "Fred", "Robert"};
         DistinctWords words = new DistinctWords(exampleNames);
         words.removeDuplicates();
+        words.sortAlphabetically();
         for (String name : words.getNames()){
             System.out.println(name);
         }

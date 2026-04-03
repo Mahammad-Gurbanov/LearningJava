@@ -9,6 +9,13 @@ public class TestSolutions {
         for (String name : words.getNames()){
             System.out.println(name);
         }
+
+        Store myStore = new Store(20);
+        int[] breadNeeded = {2, 4, 6, 3, 8};
+        int totalCount = myStore.countPeopleBuyingBread(breadNeeded);
+        System.out.println(totalCount);
+        System.out.println(myStore.getTotalBread());
+
     }
 
 }

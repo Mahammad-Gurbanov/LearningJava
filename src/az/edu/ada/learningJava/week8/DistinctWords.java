@@ -23,6 +23,9 @@ public class DistinctWords {
                 index++;
             }
         }
-        names = res.clone();
+        names = new String[index];
+        for (int i = 0; i < index; i++){
+            names[i] = res[i];
+        }
     }
 }

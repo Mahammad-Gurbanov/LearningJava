@@ -41,5 +41,13 @@ public class ListsInAction {
         nums.remove(Integer.valueOf(2));
         System.out.println(nums);
 
+        nums.add(2);
+        nums.add(3);
+        if (nums.contains(2)){
+            System.out.println("2 is in the list");
+        } else {
+            System.out.println("2 isn't contained in the list");
+        }
+
     }
 }

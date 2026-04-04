@@ -33,5 +33,13 @@ public class ListsInAction {
             System.out.println(lit.previous());
         }
 
+        System.out.println("Remove second index");
+        nums.remove(2);
+        System.out.println(nums);
+
+        System.out.println("Remove 2 from list");
+        nums.remove(Integer.valueOf(2));
+        System.out.println(nums);
+
     }
 }

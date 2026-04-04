@@ -49,5 +49,15 @@ public class ListsInAction {
             System.out.println("2 isn't contained in the list");
         }
 
+        System.out.println("Using a doubly linked list");
+        LinkedList<String> groceryItems = new LinkedList<>();
+        groceryItems.offerFirst("Bread");
+        groceryItems.offerLast("Tea");
+        groceryItems.offerFirst("Orange");
+        groceryItems.offerLast("Cheese");
+        System.out.println(groceryItems.pollFirst());
+        System.out.println(groceryItems.peekFirst());
+        System.out.println(groceryItems.peekLast());
+
     }
 }

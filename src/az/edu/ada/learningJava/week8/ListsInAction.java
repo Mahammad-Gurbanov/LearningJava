@@ -59,5 +59,17 @@ public class ListsInAction {
         System.out.println(groceryItems.peekFirst());
         System.out.println(groceryItems.peekLast());
 
+        nums.add(9);
+        nums.add(2);
+        nums.add(5);
+        nums.add(7);
+        System.out.println("Sorting number with collections.sort()");
+        Collections.sort(nums);
+        System.out.println(nums);
+
+        System.out.println("Sorting the value using List.sort()");
+        nums.add(1);
+        nums.sort(null);
+        System.out.println(nums);
     }
 }

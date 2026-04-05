@@ -19,6 +19,12 @@ public class TestSolutions {
             System.out.println(account);
         }
 
+        System.out.println("Sorted Accounts");
+        accounts.sort(null);
+        for (Account account : accounts){
+            System.out.println(account);
+        }
+
     }
 
 }

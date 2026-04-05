@@ -71,5 +71,24 @@ public class ListsInAction {
         nums.add(1);
         nums.sort(null);
         System.out.println(nums);
+
+        System.out.println("Sort numbers by their ones values");
+        Comparator<Integer> customComparator = new Comparator<>(){
+            @Override
+            public int compare(Integer num1, Integer num2){
+                num1 = Math.abs(num1);
+                num2 = Math.abs(num2);
+                return num1 % 10 - num2 % 10;
+            }
+        };
+        ArrayList<Integer> nums2 = new ArrayList<>();
+        nums2.add(-12);
+        nums2.add(11);
+        nums2.add(42);
+        nums2.add(73);
+        nums2.add(-13239);
+        nums2.sort(customComparator);
+        System.out.println(nums2);
+
     }
 }

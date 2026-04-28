@@ -51,5 +51,21 @@ public class Ex3 {
             currentKey = (String) it.next();
             System.out.println(currentKey + " -> " + nameAgeHash.get(currentKey));
         }
+
+       // Sort entries by values
+       LinkedHashMap<String, Integer> sortedMap = new LinkedHashMap<>();
+       ArrayList<Map.Entry<String, Integer>> sortedVal =
+               new ArrayList<>(nameAgeLinked.entrySet());
+
+       Comparator<Map.Entry<String, Integer>> sortValues =
+               (Map.Entry<String, Integer> entry1,
+                                Map.Entry<String, Integer> entry2) -> {
+           return Integer.compare(entry2.getValue(), entry1.getValue());
+       };
+       sortedVal.sort(sortValues);
+       for (Map.Entry<String, Integer> entry: sortedVal){
+           sortedMap.put(entry.getKey(), entry.getValue());
+       }
+        System.out.println(sortedMap);
     }
 }

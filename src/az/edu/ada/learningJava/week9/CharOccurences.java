@@ -3,6 +3,7 @@ package az.edu.ada.learningJava.week9;
 
 import java.util.*;
 
+
 public class CharOccurences {
     public static void main(String[] args) {
         NavigableMap<Character, Integer> charCount = new TreeMap<>();
@@ -51,5 +52,29 @@ public class CharOccurences {
             System.out.println();
         }
 
+        System.out.println("Unique Letters");
+        System.out.println(getUniqueChars("Actionable"));
+        System.out.println(getUniqueChars("Spectacular"));
+    }
+
+    public static List<Character> getUniqueChars(String str){
+        str = str.toLowerCase();
+        ArrayList<Character> uniqueChars = new ArrayList<>();
+        HashMap<Character, Integer> charCount = new HashMap<>();
+
+        for (int i = 0; i < str.length(); i++){
+            if (!charCount.containsKey(str.charAt(i))){
+                charCount.put(str.charAt(i), 0);
+            }
+            charCount.put(str.charAt(i), charCount.get(str.charAt(i)) + 1);
+        }
+
+        for (Map.Entry<Character, Integer> entry: charCount.entrySet()){
+            if (entry.getValue() == 1){
+                uniqueChars.add(entry.getKey());
+            }
+        }
+
+        return uniqueChars;
     }
 }

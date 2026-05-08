@@ -5,6 +5,9 @@ import java.util.*;
 
 
 public class CharOccurences {
+    private static final HashMap<String, List<Character>> uniqueCharCache =
+            new HashMap<>();
+
     public static void main(String[] args) {
         NavigableMap<Character, Integer> charCount = new TreeMap<>();
         NavigableMap<Character, ArrayList<Integer>> charIndices = new TreeMap<>();
@@ -55,10 +58,15 @@ public class CharOccurences {
         System.out.println("Unique Letters");
         System.out.println(getUniqueChars("Actionable"));
         System.out.println(getUniqueChars("Spectacular"));
+        System.out.println(getUniqueChars("Kanan"));
+        System.out.println(getUniqueChars("Kanan"));
     }
 
     public static List<Character> getUniqueChars(String str){
         str = str.toLowerCase();
+        if (uniqueCharCache.containsKey(str)){
+            return uniqueCharCache.get(str);
+        }
         ArrayList<Character> uniqueChars = new ArrayList<>();
         HashMap<Character, Integer> charCount = new HashMap<>();
 
@@ -74,7 +82,7 @@ public class CharOccurences {
                 uniqueChars.add(entry.getKey());
             }
         }
-
+        uniqueCharCache.put(str, uniqueChars);
         return uniqueChars;
     }
 }

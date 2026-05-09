@@ -12,9 +12,8 @@ public class NumericFunctions <N extends Number> {
         NumericFunctions<Double> doubleFunction = new NumericFunctions<>(-3.9);
         NumericFunctions<Float> floatFunction = new NumericFunctions<>(3.21F);
 
-        System.out.println(intFunction.getFraction());
-        System.out.println(doubleFunction.getFraction());
-        System.out.println(floatFunction.getFraction());
+        System.out.println(intFunction.isAbsEqual(-3));
+        System.out.println(floatFunction.isAbsEqual(3.12F));
     }
 
     public double getReciprocal(){
@@ -30,5 +29,11 @@ public class NumericFunctions <N extends Number> {
         double fraction = (number.doubleValue() - number.intValue()) * 100;
         fraction = Math.round(fraction);
         return Math.abs(fraction / 100);
+    }
+
+    public boolean isAbsEqual(N other){
+        double absNumber = Math.abs(number.doubleValue());
+        double absOther = Math.abs(other.doubleValue());
+        return Double.compare(absNumber, absOther) == 0;
     }
 }

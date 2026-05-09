@@ -2,7 +2,7 @@ package az.edu.ada.learningJava.week7;
 
 public class TestCustomStack {
     public static void main(String[] args) {
-        CustomStack stack = new CustomStack();
+        CustomStack<Integer> stack = new CustomStack<>();
         System.out.println(stack.getElementCount());
         System.out.println(stack.getSize());
 

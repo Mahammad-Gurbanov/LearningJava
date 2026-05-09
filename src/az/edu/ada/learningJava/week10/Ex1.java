@@ -2,13 +2,22 @@ package az.edu.ada.learningJava.week10;
 
 public class Ex1 {
     public static void main(String[] args) {
-        Integer[] arr1 = {10, 2, 3};
-        Double[] arr2 = {0.1, 0.2, 0.3};
-        String[] arr3 = {"str1", "str2", "str3", "str4"};
-        Character[] arr4 = new Character[4];
+        Integer[] arr1 = {10, 2, 3, 9, 3, 5, 0, -3};
+        Double[] arr2 = {0.1, 0.2, 0.3 , 1.2, -1.2, 0.0, -1.0};
+        String[] arr3 = {"str1", "str2", "str3", "str4", "abc", "love"};
 
-        swapItems(arr1, 0, 2);
+        System.out.println("Sort arr of integers");
+        bubbleSort(arr1);
         printArray(arr1);
+
+        System.out.println("Sort arr of doubles");
+        bubbleSort(arr2);
+        printArray(arr2);
+
+        System.out.println("Sort arr of strings");
+        bubbleSort(arr3);
+        printArray(arr3);
+
 
     }
 
@@ -50,6 +59,16 @@ public class Ex1 {
         T temp = arr[idx1];
         arr[idx1] = arr[idx2];
         arr[idx2] = temp;
+    }
+
+    public static <T extends Comparable<T>> void bubbleSort(T[] arr){
+        for (int i = 0; i < arr.length - 1; i++){
+            for (int j = i + 1; j < arr.length; j++){
+                if (arr[i].compareTo(arr[j]) > 0){
+                    swapItems(arr, i, j);
+                }
+            }
+        }
     }
 
 }

@@ -7,9 +7,8 @@ public class Ex1 {
         String[] arr3 = {"str1", "str2", "str3", "str4"};
         Character[] arr4 = new Character[4];
 
-        System.out.println(getMaximumItem(arr1));
-        System.out.println(getMaximumItem(arr2));
-        System.out.println(getMaximumItem(arr3));
+        swapItems(arr1, 0, 2);
+        printArray(arr1);
 
     }
 
@@ -46,4 +45,11 @@ public class Ex1 {
         }
         return maximumItem;
     }
+
+    public static <T> void swapItems(T[] arr, int idx1, int idx2){
+        T temp = arr[idx1];
+        arr[idx1] = arr[idx2];
+        arr[idx2] = temp;
+    }
+
 }

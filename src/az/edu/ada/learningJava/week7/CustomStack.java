@@ -1,8 +1,10 @@
 package az.edu.ada.learningJava.week7;
 
-public class CustomStack {
+import java.util.ArrayList;
+
+public class CustomStack <T> {
     private int size = 10;
-    private int[] stack;
+    private ArrayList<T> stack;
     private int elementCount = 0;
     private static final int MAXSIZE = 100;
     private int initialSize = 10;
@@ -16,29 +18,15 @@ public class CustomStack {
     }
 
     private void expandStack(){
-        if (size == MAXSIZE) return;
-
-        int[] oldStack = stack;
         size *= 2;
-        if (size > MAXSIZE) size = MAXSIZE;
-        stack = new int[size];
-        for (int i = 0; i < elementCount; i++){
-            stack[i] = oldStack[i];
-        }
     }
 
     private void shrinkStack(){
-        int[] oldStack = stack;
         size /= 2;
-        stack = new int[size];
-        for (int i = 0; i < elementCount; i++){
-            stack[i] = oldStack[i];
-        }
-
     }
 
     public CustomStack(){
-        stack = new int[size];
+        stack = new ArrayList<>();
     }
 
     public CustomStack(int size){
@@ -59,31 +47,31 @@ public class CustomStack {
         return elementCount;
     }
 
-    public void push(int element){
+    public void push(T element){
         if (elementCount >= MAXSIZE)
             throw new StackOverflowException("Stack can't exceed " + MAXSIZE +
                 " elements.");
 
         if (shouldExpand()) expandStack();
 
-        stack[elementCount] = element;
+        stack.add(elementCount, element);
         elementCount++;
     }
 
-    public int pop(){
+    public T pop(){
         if (elementCount == 0)
             throw new InvalidSizeException("Can't pop from an empty stack");
 
         if (shouldShrink()) shrinkStack();
 
         elementCount--;
-        return stack[elementCount];
+        return stack.get(elementCount);
     }
 
-    public int peek(){
+    public T peek(){
         if (elementCount == 0)
             throw new InvalidSizeException("Can't peek an element in an empty" +
                     " stack");
-        return stack[elementCount - 1];
+        return stack.get(elementCount - 1);
     }
 }

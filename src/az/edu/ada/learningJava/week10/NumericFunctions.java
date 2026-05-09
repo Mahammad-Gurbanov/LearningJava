@@ -9,13 +9,12 @@ public class NumericFunctions <N extends Number> {
 
     public static void main(String[] args) {
         NumericFunctions<Integer> intFunction = new NumericFunctions<>(3);
-        System.out.println(intFunction.getReciprocal());
+        NumericFunctions<Double> doubleFunction = new NumericFunctions<>(-3.9);
+        NumericFunctions<Float> floatFunction = new NumericFunctions<>(3.21F);
 
-        NumericFunctions<Double> doubleFunction = new NumericFunctions<>(3.9);
-        System.out.println(doubleFunction.getReciprocal());
-
-        NumericFunctions<Float> floatFunction = new NumericFunctions<>(3.2F);
-        System.out.println(floatFunction.getReciprocal());
+        System.out.println(intFunction.getFraction());
+        System.out.println(doubleFunction.getFraction());
+        System.out.println(floatFunction.getFraction());
     }
 
     public double getReciprocal(){
@@ -25,5 +24,11 @@ public class NumericFunctions <N extends Number> {
         double reciprocal = 1 / number.doubleValue() * 100;
         reciprocal = Math.round(reciprocal);
         return reciprocal / 100;
+    }
+
+    public double getFraction(){
+        double fraction = (number.doubleValue() - number.intValue()) * 100;
+        fraction = Math.round(fraction);
+        return Math.abs(fraction / 100);
     }
 }

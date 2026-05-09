@@ -19,6 +19,9 @@ public class NumericFunctions <N extends Number> {
     }
 
     public double getReciprocal(){
+        if (number.equals(0)){
+            throw new IllegalArgumentException("Reciprocal of zero isn't defined");
+        }
         double reciprocal = 1 / number.doubleValue() * 100;
         reciprocal = Math.round(reciprocal);
         return reciprocal / 100;

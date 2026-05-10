@@ -1,14 +1,18 @@
 package az.edu.ada.learningJava.week11;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
 public class Book {
     String title;
     String author;
     int pageCount;
 
-    public Book(String title, String author, int pageCounter){
+    public Book(String title, String author, int pageCount){
         this.title = title;
         this.author = author;
-        this.pageCounter = pageCounter;
+        this.pageCount = pageCount;
     }
 
     public String getTitle(){
@@ -29,5 +33,26 @@ public class Book {
                 "title: %s, author: %s, page count: %d",
                 title, author, pageCount
                 );
+    }
+
+    public static void main(String[] args) {
+        List<Book> books = new ArrayList<>(List.of(
+                new Book("A", "Abc", 100),
+                new Book("A", "Abz", 123),
+                new Book("The Sequel", "Xyz", 213),
+                new Book("Life", "W", 700),
+                new Book("The glasses", "C", 22)
+        ));
+        List<Book> duplicateBooks = new ArrayList<>(books);
+
+        System.out.println("Sort list alphabetically by Author names");
+        System.out.println("Using Lambdas");
+        books.sort((b1, b2) -> (b1.getAuthor().compareTo(b2.getAuthor())));
+        books.forEach(System.out::println);
+        System.out.println("Using method reference");
+        duplicateBooks.sort(Comparator.comparing(Book::getAuthor));
+        duplicateBooks.forEach(System.out::println);
+
+
     }
 }

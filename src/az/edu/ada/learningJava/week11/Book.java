@@ -37,11 +37,12 @@ public class Book {
 
     public static void main(String[] args) {
         List<Book> books = new ArrayList<>(List.of(
-                new Book("A", "Abc", 100),
+                new Book("Chapter: Fire", "Abc", 100),
                 new Book("A", "Abz", 123),
                 new Book("The Sequel", "Xyz", 213),
                 new Book("Life", "W", 700),
-                new Book("The glasses", "C", 22)
+                new Book("The glasses", "C", 22),
+                new Book("Chapter: Air", "Abc", 123)
         ));
         List<Book> duplicateBooks = new ArrayList<>(books);
 
@@ -64,5 +65,9 @@ public class Book {
                                       .reversed());
         duplicateBooks.forEach(System.out::println);
 
+        System.out.println("Complex Sort");
+        books.sort(Comparator.comparing(Book::getAuthor)
+                             .thenComparing(Book::getTitle));
+        books.forEach(System.out::println);
     }
 }

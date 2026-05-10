@@ -1,5 +1,10 @@
 package az.edu.ada.learningJava.week11;
 
+
+import java.util.ArrayList;
+import java.util.*;
+import java.util.function.Predicate;
+
 public class Product {
     private String name;
     private double price;
@@ -32,7 +37,16 @@ public class Product {
     }
 
     public static void main(String[] args) {
-        Product p1 = new Product("P1", 10.23, true);
-        System.out.println(p1);
+        List<Product> products = new ArrayList<>(List.of(
+           new Product("Mouse", 200.99, true),
+           new Product("Cup", 9.99, true),
+           new Product("LightSaber", 100, false),
+           new Product("NoteBook", 3.45, true),
+           new Product("Pen", 0.73, true)
+        ));
+
+        Predicate<Product> isAffordable = (p) -> (p.getPrice() < 50 && p.isInStock());
+        products.removeIf(isAffordable.negate());
+        products.forEach(System.out::println);
     }
 }

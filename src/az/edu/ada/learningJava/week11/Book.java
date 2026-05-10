@@ -53,6 +53,16 @@ public class Book {
         duplicateBooks.sort(Comparator.comparing(Book::getAuthor));
         duplicateBooks.forEach(System.out::println);
 
+        System.out.println("Sort the pages in descending order");
+        books.sort((b1, b2) -> (Integer.compare(
+                b2.getPageCount(), b1.getPageCount()
+        )));
+        books.forEach(System.out::println);
+
+        System.out.println("Use method references");
+        duplicateBooks.sort(Comparator.comparingInt(Book::getPageCount)
+                                      .reversed());
+        duplicateBooks.forEach(System.out::println);
 
     }
 }

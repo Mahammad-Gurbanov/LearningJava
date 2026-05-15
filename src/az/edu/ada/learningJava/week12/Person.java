@@ -12,11 +12,18 @@ public class Person {
     }
 
     public synchronized void bow(Person friend){
-        System.out.printf(
-                "%s is bowing to the friend: %s\n",
-                name, friend.getName()
-        );
+        if (name.compareTo(friend.getName()) <= 0){
+            System.out.printf(
+                    "%s is bowing to the friend: %s\n",
+                    name, friend.getName()
+            );
 
-        friend.bow(this);
+            System.out.printf(
+                    "%s is bowing to the friend: %s\n",
+                    friend.getName(), name
+            );
+        } else {
+            friend.bow(this);
+        }
     }
 }

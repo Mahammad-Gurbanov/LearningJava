@@ -2,8 +2,8 @@ package az.edu.ada.learningJava.week12;
 
 public class Main {
     public static void main(String[] args) {
-        Person p1 = new Person("M");
-        Person p2 = new Person("O");
+        Person p1 = new Person("B");
+        Person p2 = new Person("A");
 
         Thread t1 = new Thread(() -> p1.bow(p2));
         Thread t2 = new Thread(() -> p2.bow(p1));
